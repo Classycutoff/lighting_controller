@@ -6,6 +6,11 @@
 
 This is the Thesis git for Eliel Taskinen. It is meant to make a lighting controller, which in the final form can be made to recognize sound and make a "vizual equalizer" with two LED bars (Stairville, Led Bar 120/4).
 
+
+# Time Spent on this project
+
+10.3.23: 1.5 h
+
 # TODO List
 
  - [X] Check the lights and Enttec OpenDMX works
