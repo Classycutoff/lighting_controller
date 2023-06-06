@@ -7,7 +7,10 @@ import sys
 
 dev = usb.core.find(find_all=1)
 
+i = 0
 for cfg in dev:
+    print(i)
+    i += 1
     sys.stdout.write('Decimal VendorID=' + str(cfg.idVendor) +
                      ' & ProductID=' + str(cfg.idProduct) + '\n')
     sys.stdout.write('Hexadecimal VendorID=' + hex(cfg.idVendor) +
