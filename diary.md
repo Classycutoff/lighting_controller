@@ -22,3 +22,5 @@ This is what I've done every time I've worked on this.
 - https://github.com/libusb/libusb/wiki/Windows#How_to_use_libusb_on_Windows
 - https://zadig.akeo.ie/
 - Open Enttex had it's own driver, but i had to swap it to another one with Zadig.
+
+## 07.06.2023 21.15 - 22.03 (0h 48 min)

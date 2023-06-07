@@ -39,8 +39,6 @@ def main():
     port = pyftdi.serialext.serial_for_url(CONNECTION_URL, baudrate=3000000)
     port.write(b"Hello World")
 
-    data = port.read(1024)
-
     # endpoint = dev[0].interfaces()[0].endpoints()[0]
     # interface_number = dev[0].interfaces()[0].bInterfaceNumber
 
