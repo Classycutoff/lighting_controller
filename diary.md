@@ -36,4 +36,9 @@ This is what I've done every time I've worked on this.
 - I had to find the port, which required uninstalling third party drivers.
 - I can now again control the light from the lighting software
 - I cannot get it working from the code. Frustrating
-- Testi
+- Added a git alias:
+```
+git config --global alias.yolo '!sh -c "git commit -am \"`curl -sL https://whatthecommit.com/index.txt`\""'
+
+```
+Funneeee
