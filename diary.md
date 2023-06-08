@@ -28,7 +28,7 @@ This is what I've done every time I've worked on this.
 - Made the virtualenv, requirements.txt etc
 
 
-## 08.06.2023 19.40 - 22.00
+## 08.06.2023 19.40 - 22.17 (2 h 37 min)
 - Worked on git
   - Cloned my thesis git to github.
 - Tried to get the communication working
