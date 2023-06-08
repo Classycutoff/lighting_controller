@@ -24,3 +24,15 @@ This is what I've done every time I've worked on this.
 - Open Enttex had it's own driver, but i had to swap it to another one with Zadig.
 
 ## 07.06.2023 21.15 - 22.03 (0h 48 min)
+- Worked on the env
+- Made the virtualenv, requirements.txt etc
+
+
+## 08.06.2023 19.40 - 22.00
+- Worked on git
+  - Cloned my thesis git to github.
+- Tried to get the communication working
+- Managed to untangle the driver fiasco. Turns out I didn't need the Win or lib drivers
+- I had to find the port, which required uninstalling third party drivers.
+- I can now again control the light from the lighting software
+- I cannot get it working from the code. Frustrating
