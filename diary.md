@@ -41,4 +41,6 @@ This is what I've done every time I've worked on this.
 git config --global alias.yolo '!sh -c "git commit -am \"`curl -sL https://whatthecommit.com/index.txt`\""'
 
 ```
-Funneeee
+
+
+## 08.06.2023 22.30 - 
