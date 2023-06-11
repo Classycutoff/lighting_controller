@@ -44,3 +44,5 @@ git config --global alias.yolo '!sh -c "git commit -am \"`curl -sL https://whatt
 
 
 ## 08.06.2023 22.30 - 22.45 (15 min)
+
+## 11.06.2023 17.45 - 18.46 (1 h 1 min)

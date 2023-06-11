@@ -1,5 +1,5 @@
 #!/bin/bash
 
-chmod 744 env/Scripts/activate
+chmod 744 venv/Scripts/activate
 
-source env/Scripts/activate
+source venv/Scripts/activate
