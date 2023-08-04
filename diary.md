@@ -46,3 +46,8 @@ git config --global alias.yolo '!sh -c "git commit -am \"`curl -sL https://whatt
 ## 08.06.2023 22.30 - 22.45 (15 min)
 
 ## 11.06.2023 17.45 - 18.46 (1 h 1 min)
+
+## 04.08.2023 18.00 - 22.00 (4 h)
+- Vaihdoin kohdetta, että en tänään katsonut usb asioita, vaan katsoin pystynkö vaihtamaan screenillä väriä kun soitan musiikkia.
+- Sain tämän onnistumaan
+- Made something???
