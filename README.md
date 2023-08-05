@@ -8,6 +8,7 @@ This is the Thesis git for Eliel Taskinen. It is meant to make a lighting contro
 
 
 Code to run the env: `source start.sh`
+or `.\venv\Scripts\activate`
 
 deactivate env: `deactivate`
 
@@ -33,6 +34,8 @@ deactivate env: `deactivate`
  - [ ] Make the visual equalizer.
 	 - [ ] Analyze sound.
 		 - [ ] How?
+		 - [X] Analyze Intensity.
+		 - [ ] Analyze frequency
 	 - [ ] Section it off logarithmically.
 	 - [ ] Connect it to the lights.
 

@@ -61,4 +61,9 @@ git config --global alias.yolo '!sh -c "git commit -am \"`curl -sL https://whatt
 - Tämä toimi
 - Sain toimimaan, sain eri värejä myöskin näkymään.
 - Kokeilin myös laskea miten eri frequency toimivat, ja en tee enää intensiteetillä vaan freq_countilla
-- 
+  
+## 05.08.2023 19.30 - 23.30 (4 h)
+- Continued on test/test8/test3.py
+- Tried to count more, it just counts couple
+- Mä saan koodin helposti reagoimaan ääneen, mutta sen jakamisessa eri taajuuksiin on vaikeaa. Nyt se näyttää vaan jollain tasolla intensiivityyden
+- tutkin erilaisia frequency analyzereita, ja en saanut vielä toimimaan. Mutta nämä luultavasti auttavat löytämään ratkaisun.
