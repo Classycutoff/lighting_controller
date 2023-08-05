@@ -51,3 +51,14 @@ git config --global alias.yolo '!sh -c "git commit -am \"`curl -sL https://whatt
 - Vaihdoin kohdetta, että en tänään katsonut usb asioita, vaan katsoin pystynkö vaihtamaan screenillä väriä kun soitan musiikkia.
 - Sain tämän onnistumaan
 - Made something???
+
+
+## 05.08.2023 14.00 - 17.00 (3 h)
+- Huomasin, miten eilisessä se otti mikin eikä suoraan outputtia, niin latasin vb-audion joka otaa sound outputin, ja laittaa sen inputiksi.
+- Yritän nyt selvittää miten voin tehdä että se menee outputtiin ja inputtiin, koska muuten en kuule musiikkia.
+- En usko että riittää pelkkä virtuaalinen kaapeli, mä tartten luultavasti virtuaaliseta mikseriä, joka osottaa outputin kumpaankin.
+- Lataan Virtual Audio Mixerin VOICEMEETER
+- Tämä toimi
+- Sain toimimaan, sain eri värejä myöskin näkymään.
+- Kokeilin myös laskea miten eri frequency toimivat, ja en tee enää intensiteetillä vaan freq_countilla
+- 

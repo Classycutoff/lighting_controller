@@ -1,10 +1,10 @@
-# Interesting effect, kinda going inside the blocks.
-# SAVE
-
 import pyaudio
 import struct
 import tkinter as tk
 import numpy as np
+
+rectangle_len = 8
+
 
 # Set up the audio stream
 CHUNK = 1024
@@ -47,7 +47,7 @@ hex_transform = [
 ]
 
 low_range_upper_limit = 750
-high_range_upper_limit = 2000
+high_range_upper_limit = 3500
 low_range_list = np.linspace(0, low_range_upper_limit + 1, 17, dtype=int)
 high_range_list = np.linspace(
     low_range_upper_limit, high_range_upper_limit + 1, 17, dtype=int
@@ -59,7 +59,7 @@ for i in range(len(range_list)):
     range_dict[range_list[i]] = hex_transform[i % 16]
 
 rectangles = []
-for i in range(8):
+for i in range(rectangle_len):
     rectangle = canvas.create_rectangle(
         i * 50, 0, (i + 1) * 50, 200, fill="black"
     )  # Initial color is green
@@ -78,15 +78,17 @@ def get_audio_intensity(data):
     fft_freqs = np.fft.fftfreq(CHUNK, 1.0 / RATE)
 
     # Divide the frequency spectrum into 8 bands
-    freq_bands = np.linspace(0, len(fft_freqs) - 1, 9, dtype=int)
-    intensities = [
+    freq_bands = np.linspace(0, len(fft_freqs) - 1, rectangle_len + 1, dtype=int)
+    temp_intensities = [
         round_to_range(np.average(np.abs(fft_data[freq_bands[i] : freq_bands[i + 1]])))
-        for i in range(8)
+        for i in range(rectangle_len)
     ]
+    print(temp_intensities)
 
     # Normalize the intensities to fit in the 0-255 range for color representation
     intensities = [
-        intensity.astype(int) for intensity in (intensities / np.max(intensities) * 255)
+        intensity.astype(int)
+        for intensity in (temp_intensities / np.max(temp_intensities) * 255)
     ]
     return intensities
 
@@ -94,7 +96,7 @@ def get_audio_intensity(data):
 def update_bar(rectangle_obj, intensity):
     global canvas, low_range_upper_limit, high_range_upper_limit
     rounded_intensity = round_to_range(intensity)
-    if intensity >= low_range_upper_limit:
+    if rounded_intensity >= 250:
         canvas.itemconfig(rectangle_obj, fill=f"#{range_dict[rounded_intensity]}00")
     else:
         canvas.itemconfig(rectangle_obj, fill=f"#00{range_dict[rounded_intensity]}")
@@ -105,6 +107,7 @@ def main():
     global stream
     data = stream.read(CHUNK)
     intensities = get_audio_intensity(data)
+    print(intensities)
     for i in range(len(rectangles)):
         update_bar(rectangles[i], intensities[i])
     root.after(20, main)
