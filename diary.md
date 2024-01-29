@@ -67,3 +67,8 @@ git config --global alias.yolo '!sh -c "git commit -am \"`curl -sL https://whatt
 - Tried to count more, it just counts couple
 - Mä saan koodin helposti reagoimaan ääneen, mutta sen jakamisessa eri taajuuksiin on vaikeaa. Nyt se näyttää vaan jollain tasolla intensiivityyden
 - tutkin erilaisia frequency analyzereita, ja en saanut vielä toimimaan. Mutta nämä luultavasti auttavat löytämään ratkaisun.
+
+## 29.01.2024 14.30 - 18.30
+- Yritän tutkia missä olin tutkimusten kanssa, koska en muista mitä olin tekemässä.
+- Paljon ongelmia sen kanssa, että OpenDMX laitteita ei voi kontrolloida normaaleilla serial kirjastoilla, esimerkiksi PySerial. Varsinkin kun monia kirjastoja löytyy mitkä toimii Pro version kanssa.
+- Mun pitää tehdä WinUSB Driveri jotta saan edes kokeiltua toimiiko tämä.
