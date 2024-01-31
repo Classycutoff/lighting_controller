@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Enttec Test"
   ],
-  "SelectedNode": "\\Enttec Test.sln",
+  "SelectedNode": "\\Enttec Test\\Enttec Test.csproj",
   "PreviewInSolutionExplorer": false
 }

@@ -18,3 +18,14 @@ D:\Opinnot\2023_Oppari\Csharp_example\Enttec Test\obj\Debug\Enttec_Test.Main.res
 D:\Opinnot\2023_Oppari\Csharp_example\Enttec Test\obj\Debug\Enttec_Test.Properties.Resources.resources
 D:\Opinnot\2023_Oppari\Csharp_example\Enttec Test\obj\Debug\Enttec Test.csproj.GenerateResource.cache
 D:\Opinnot\2023_Oppari\Csharp_example\Enttec Test\obj\Debug\Enttec Test.csproj.CoreCompileInputs.cache
+D:\Opinnot\2023_Oppari\lighting_controller\2024_Tests\Csharp_example\Enttec Test\bin\Debug\Enttec Test.exe.config
+D:\Opinnot\2023_Oppari\lighting_controller\2024_Tests\Csharp_example\Enttec Test\bin\Debug\Enttec Test.exe
+D:\Opinnot\2023_Oppari\lighting_controller\2024_Tests\Csharp_example\Enttec Test\bin\Debug\Enttec Test.pdb
+D:\Opinnot\2023_Oppari\lighting_controller\2024_Tests\Csharp_example\Enttec Test\obj\Debug\Enttec Test.csproj.AssemblyReference.cache
+D:\Opinnot\2023_Oppari\lighting_controller\2024_Tests\Csharp_example\Enttec Test\obj\Debug\Enttec Test.csproj.SuggestedBindingRedirects.cache
+D:\Opinnot\2023_Oppari\lighting_controller\2024_Tests\Csharp_example\Enttec Test\obj\Debug\Enttec_Test.Main.resources
+D:\Opinnot\2023_Oppari\lighting_controller\2024_Tests\Csharp_example\Enttec Test\obj\Debug\Enttec_Test.Properties.Resources.resources
+D:\Opinnot\2023_Oppari\lighting_controller\2024_Tests\Csharp_example\Enttec Test\obj\Debug\Enttec Test.csproj.GenerateResource.cache
+D:\Opinnot\2023_Oppari\lighting_controller\2024_Tests\Csharp_example\Enttec Test\obj\Debug\Enttec Test.csproj.CoreCompileInputs.cache
+D:\Opinnot\2023_Oppari\lighting_controller\2024_Tests\Csharp_example\Enttec Test\obj\Debug\Enttec Test.exe
+D:\Opinnot\2023_Oppari\lighting_controller\2024_Tests\Csharp_example\Enttec Test\obj\Debug\Enttec Test.pdb

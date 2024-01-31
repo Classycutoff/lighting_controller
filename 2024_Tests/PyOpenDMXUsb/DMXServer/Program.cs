@@ -90,7 +90,11 @@ namespace DMXServer
                             while ((input = sr.ReadLine()) != null) {
                                 try { //Errors indicate malformed command
                                     if (input.StartsWith("DMX ")) { // 'DMX ...'
+
                                         command_DMX(input);
+                                        // OpenDMX.setDmxValue(Convert.ToInt16("1"), Convert.ToByte("255"));
+                                        // OpenDMX.writeData();
+
                                     } else if (input.StartsWith("EFFECT ")) { // 'EFFECT ...'
                                         command_EFFECT(input);
                                     } else {
@@ -163,7 +167,9 @@ namespace DMXServer
             for (int i = 0; i < dmxChannelL.Count; i++) {
                 if (verbose) Console.WriteLine("[DEBUG] - Setting: {0} -> {1}", dmxChannelL[i], dmxValueL[i]);
                 OpenDMX.setDmxValue(dmxChannelL[i], dmxValueL[i]);
+                OpenDMX.writeData();
             }
+            OpenDMX.writeData();
         }
         
         
@@ -413,25 +419,40 @@ namespace DMXServer
 
         public static void writeData()
         {
-            while (!done)
+            try
             {
-                effectsQueue(); //Handles the currently active effects
-
                 initOpenDMX();
-                FT_SetBreakOn(handle);
-                FT_SetBreakOff(handle);
-                bytesWritten = write(handle, buffer, buffer.Length);
-                Thread.Sleep(tickSpeed);
+                if (OpenDMX.status == FT_STATUS.FT_OK)
+                {
+                    status = FT_SetBreakOn(handle);
+                    status = FT_SetBreakOff(handle);
+                    bytesWritten = write(handle, buffer, buffer.Length);
+
+                    Thread.Sleep(25);      //give the system time to send the data before sending more 
+
+                }
+            }
+            catch (Exception exp)
+            {
+                Console.WriteLine(exp);
             }
 
         }
 
         public static int write(uint handle, byte[] data, int length){
-            IntPtr ptr = Marshal.AllocHGlobal((int)length);
-            Marshal.Copy(data, 0, ptr, (int)length);
-            uint bytesWritten = 0;
-            status = FT_Write(handle, ptr, (uint)length, ref bytesWritten);
-            return (int)bytesWritten;
+            try
+            {
+                IntPtr ptr = Marshal.AllocHGlobal((int)length);
+                Marshal.Copy(data, 0, ptr, (int)length);
+                uint bytesWritten = 0;
+                status = FT_Write(handle, ptr, (uint)length, ref bytesWritten);
+                return (int)bytesWritten;
+            }
+            catch (Exception exp)
+            {
+                Console.WriteLine(exp);
+                return 0;
+            }
         }
 
         public static void initOpenDMX()

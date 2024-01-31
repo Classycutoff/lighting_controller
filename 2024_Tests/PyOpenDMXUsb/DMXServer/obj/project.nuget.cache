@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "7fhzUrmx4Zta29U3kMhT23YdI3XSDtocAd799g74SPEdo/bqgNU81ZD8oaGB5mJV34j34m1hRsJJXYtSIhW/UA==",
+  "dgSpecHash": "Lj6QjVTfdHXw5ACElfVW3D+VNxEFO5z095Sp2abLvZX/ZhrnK53jfznr8dG7hVbzFBR5rxqxZqjR6z9MQyqt4w==",
   "success": true,
-  "projectFilePath": "D:\\Opinnot\\2023_Oppari\\PyOpenDmxUsb-v.1.1.1-sources\\DMXServer\\DMXServer.csproj",
+  "projectFilePath": "D:\\Opinnot\\2023_Oppari\\lighting_controller\\2024_Tests\\PyOpenDMXUsb\\DMXServer\\DMXServer.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

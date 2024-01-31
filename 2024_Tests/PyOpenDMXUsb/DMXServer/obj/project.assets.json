@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Opinnot\\2023_Oppari\\PyOpenDmxUsb-v.1.1.1-sources\\DMXServer\\DMXServer.csproj",
+      "projectUniqueName": "D:\\Opinnot\\2023_Oppari\\lighting_controller\\2024_Tests\\PyOpenDMXUsb\\DMXServer\\DMXServer.csproj",
       "projectName": "DMXServer",
-      "projectPath": "D:\\Opinnot\\2023_Oppari\\PyOpenDmxUsb-v.1.1.1-sources\\DMXServer\\DMXServer.csproj",
+      "projectPath": "D:\\Opinnot\\2023_Oppari\\lighting_controller\\2024_Tests\\PyOpenDMXUsb\\DMXServer\\DMXServer.csproj",
       "packagesPath": "C:\\Users\\Käyttäjä\\.nuget\\packages\\",
-      "outputPath": "D:\\Opinnot\\2023_Oppari\\PyOpenDmxUsb-v.1.1.1-sources\\DMXServer\\obj\\",
+      "outputPath": "D:\\Opinnot\\2023_Oppari\\lighting_controller\\2024_Tests\\PyOpenDMXUsb\\DMXServer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
