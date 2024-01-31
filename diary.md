@@ -68,7 +68,10 @@ git config --global alias.yolo '!sh -c "git commit -am \"`curl -sL https://whatt
 - Mä saan koodin helposti reagoimaan ääneen, mutta sen jakamisessa eri taajuuksiin on vaikeaa. Nyt se näyttää vaan jollain tasolla intensiivityyden
 - tutkin erilaisia frequency analyzereita, ja en saanut vielä toimimaan. Mutta nämä luultavasti auttavat löytämään ratkaisun.
 
-## 29.01.2024 14.30 - 18.30
+## 29.01.2024 14.30 - 18.30 
 - Yritän tutkia missä olin tutkimusten kanssa, koska en muista mitä olin tekemässä.
 - Paljon ongelmia sen kanssa, että OpenDMX laitteita ei voi kontrolloida normaaleilla serial kirjastoilla, esimerkiksi PySerial. Varsinkin kun monia kirjastoja löytyy mitkä toimii Pro version kanssa.
 - Mun pitää tehdä WinUSB Driveri jotta saan edes kokeiltua toimiiko tämä.
+
+## 31.01.2024 1.20 - 2.30 ; 1 h 10 min
+- Started looking into another library that should work with OpenDMX. I managed to make the pipeline work inside PyOpenDmxUsb... At least I got some results inside the c# DMXServer, though I haven't gotten anything on the lamp yet.
