@@ -75,3 +75,8 @@ git config --global alias.yolo '!sh -c "git commit -am \"`curl -sL https://whatt
 
 ## 31.01.2024 1.20 - 2.30 ; 1 h 10 min
 - Started looking into another library that should work with OpenDMX. I managed to make the pipeline work inside PyOpenDmxUsb... At least I got some results inside the c# DMXServer, though I haven't gotten anything on the lamp yet.
+
+## 31.01.2024 11.00 - XX.XX ; X h X min
+- Success!!! I managed to get the Enttec OpenDMX C# Example working!!!!!! Now I just need to reverse engineer how to do that in my file.
+  - I ran the Enttec OpenDMX C# Example [You can get it from here](https://www.enttec.co.uk/en/product/dmx-usb-interfaces/open-dmx-usb/) on Visual Studio. Before it started working I had to unblock the files, since they came from the internet, so I ran the Powershell cmd `Unblock-File *` in the correct directory.
+  - ![Unblock-file cmd](image.png)

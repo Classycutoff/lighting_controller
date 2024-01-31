@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "DMXServer": {
+      "commandName": "Project",
+      "commandLineArgs": "-v -s -n DOPU"
+    }
+  }
+}

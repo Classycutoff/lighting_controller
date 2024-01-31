@@ -1,0 +1,15 @@
+D:\Opinnot\2023_Oppari\PyOpenDmxUsb-v.1.1.1-sources\DMXServer\bin\Debug\net7.0\DMXServer.exe
+D:\Opinnot\2023_Oppari\PyOpenDmxUsb-v.1.1.1-sources\DMXServer\bin\Debug\net7.0\DMXServer.deps.json
+D:\Opinnot\2023_Oppari\PyOpenDmxUsb-v.1.1.1-sources\DMXServer\bin\Debug\net7.0\DMXServer.runtimeconfig.json
+D:\Opinnot\2023_Oppari\PyOpenDmxUsb-v.1.1.1-sources\DMXServer\bin\Debug\net7.0\DMXServer.dll
+D:\Opinnot\2023_Oppari\PyOpenDmxUsb-v.1.1.1-sources\DMXServer\bin\Debug\net7.0\DMXServer.pdb
+D:\Opinnot\2023_Oppari\PyOpenDmxUsb-v.1.1.1-sources\DMXServer\obj\Debug\net7.0\DMXServer.csproj.AssemblyReference.cache
+D:\Opinnot\2023_Oppari\PyOpenDmxUsb-v.1.1.1-sources\DMXServer\obj\Debug\net7.0\DMXServer.GeneratedMSBuildEditorConfig.editorconfig
+D:\Opinnot\2023_Oppari\PyOpenDmxUsb-v.1.1.1-sources\DMXServer\obj\Debug\net7.0\DMXServer.AssemblyInfoInputs.cache
+D:\Opinnot\2023_Oppari\PyOpenDmxUsb-v.1.1.1-sources\DMXServer\obj\Debug\net7.0\DMXServer.AssemblyInfo.cs
+D:\Opinnot\2023_Oppari\PyOpenDmxUsb-v.1.1.1-sources\DMXServer\obj\Debug\net7.0\DMXServer.csproj.CoreCompileInputs.cache
+D:\Opinnot\2023_Oppari\PyOpenDmxUsb-v.1.1.1-sources\DMXServer\obj\Debug\net7.0\DMXServer.dll
+D:\Opinnot\2023_Oppari\PyOpenDmxUsb-v.1.1.1-sources\DMXServer\obj\Debug\net7.0\refint\DMXServer.dll
+D:\Opinnot\2023_Oppari\PyOpenDmxUsb-v.1.1.1-sources\DMXServer\obj\Debug\net7.0\DMXServer.pdb
+D:\Opinnot\2023_Oppari\PyOpenDmxUsb-v.1.1.1-sources\DMXServer\obj\Debug\net7.0\DMXServer.genruntimeconfig.cache
+D:\Opinnot\2023_Oppari\PyOpenDmxUsb-v.1.1.1-sources\DMXServer\obj\Debug\net7.0\ref\DMXServer.dll
