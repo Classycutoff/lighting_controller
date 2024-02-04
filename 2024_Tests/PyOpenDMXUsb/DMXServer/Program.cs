@@ -29,6 +29,24 @@ namespace DMXServer
             //Commandline arguments
             int nPos = -1;
             string argsT;
+
+            try
+            {
+                OpenDMX.start();                                            //find and connect to devive (first found if multiple)
+                if (OpenDMX.status == FT_STATUS.FT_DEVICE_NOT_FOUND)       //update status
+                    Console.WriteLine("No Enttec USB Device Found");
+                else if (OpenDMX.status == FT_STATUS.FT_OK)
+                    Console.WriteLine("Found DMX on USB");
+                else
+                    Console.WriteLine("Error Opening Device");
+            }
+            catch (Exception exp)
+            {
+                Console.WriteLine(exp);
+                Console.WriteLine("Error Connecting to Enttec USB Device");
+
+            }
+
             try {
                 for (int i = 0; i < args.Length; i++) {
                 argsT = args[i];

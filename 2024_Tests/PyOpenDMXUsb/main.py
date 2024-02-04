@@ -8,7 +8,7 @@ dmxClient.connect(True)
 
 while True:
     try:
-        dmxClient.write({1: 255, 2: 255})
+        dmxClient.write({4: 255, 12: 255})
     except KeyboardInterrupt as k:
         print(k)
         break

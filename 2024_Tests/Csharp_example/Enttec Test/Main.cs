@@ -4,10 +4,18 @@
 //
 //This example uses only 3 channels by default which works fine with many simple RGB Lamps.
 //
+
+
 using System;
 using System.Runtime.InteropServices;
+using System.IO;
+using System.IO.Pipes;
 using System.Threading;
+using System.Text;
+using System.Collections.Generic;
+using System.Linq;
 using System.Windows.Forms;
+
 
 namespace Enttec_Test
 {
@@ -53,14 +61,63 @@ namespace Enttec_Test
 
         private void btnAllOn_Click(object sender, EventArgs e)
         {
-            if (OpenDMX.status == FT_STATUS.FT_DEVICE_NOT_FOUND)
-                toolStripStatusLabel1.Text = "No Enttec USB Device Found";
-            else
-                toolStripStatusLabel1.Text = "Found DMX on USB";
-            OpenDMX.setDmxValue(1, 255);
-            OpenDMX.setDmxValue(2, 255);
-            OpenDMX.setDmxValue(3, 255);
-            OpenDMX.writeData();
+            var pipeName = "DOPU";
+            List<int> dmxChannelL = new List<int>(); //List of the DMX channels
+            List<byte> dmxValueL = new List<byte>(); //List of the DMX values
+            int channel; //The channelof a subcommand
+            byte value; //The value of a subcommand
+            using (NamedPipeClientStream pipeClient =
+               new NamedPipeClientStream(".", pipeName, PipeDirection.In))
+            {
+                toolStripStatusLabel1.Text = "Waiting for connection to DMXClient...";
+                pipeClient.Connect();
+                toolStripStatusLabel1.Text = "Connected";
+                using (StreamReader sr = new StreamReader(pipeClient))
+                {
+                    //variables used for command handling
+                    string input = sr.ReadLine(); //Holds the string recieved over the named pipe
+
+                    //Command handling
+
+                    if (input.StartsWith("DMX "))
+                    { // 'DMX ...'
+
+                        string[] dmxCommand = input.Split();
+
+                        for (int i = 1; i < ((dmxCommand.Length - 1) / 2) + 1; i++)
+                        {
+                            channel = Int16.Parse(dmxCommand[i * 2 - 1]); //Channel
+                            value = byte.Parse(dmxCommand[i * 2]); //Value
+
+
+                            //Console.WriteLine("{0} -> Val1: {1}, Val2: {2}", i, val1, val2);
+                            if (channel < 0 || channel > 513 || value < 0 || value > 255)
+                            {
+                                throw new Exception();
+                            }
+                            dmxChannelL.Add(channel);
+                            dmxValueL.Add(value);
+                        }
+
+
+                        if (OpenDMX.status == FT_STATUS.FT_DEVICE_NOT_FOUND)       //update status
+                            Console.WriteLine("No Enttec USB Device Found");
+                        else
+                            Console.WriteLine("Found DMX on USB");
+
+                        for (int i = 0; i < dmxChannelL.Count; i++)
+                        {
+                            OpenDMX.setDmxValue(dmxChannelL[i], dmxValueL[i]);
+                            OpenDMX.writeData();
+                        }
+                        Thread.Sleep(500);
+
+                    }
+
+                }
+            }
+
+            Environment.Exit(Environment.ExitCode);
 
         }
 

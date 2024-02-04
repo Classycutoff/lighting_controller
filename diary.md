@@ -83,3 +83,8 @@ git config --global alias.yolo '!sh -c "git commit -am \"`curl -sL https://whatt
 
 ## 31.01.2024 13.20 - 15.25 ; 2 h 5 min
 - Yritän saada C# koodia toimimaan.
+- Sain C# esimerkin toimimaan
+
+## 04.02.2024 16.30 - 18.00 ; 1 h 30 min
+- Yritän saada PyOpenDMX Usb koodin toimimaan C# esimerkin avulla.
+- En saanut sitä, mutta sain Csharp_examplessa olevan C# koodin toimimaan.
