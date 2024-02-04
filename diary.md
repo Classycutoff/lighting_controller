@@ -88,3 +88,6 @@ git config --global alias.yolo '!sh -c "git commit -am \"`curl -sL https://whatt
 ## 04.02.2024 16.30 - 18.00 ; 1 h 30 min
 - Yritän saada PyOpenDMX Usb koodin toimimaan C# esimerkin avulla.
 - En saanut sitä, mutta sain Csharp_examplessa olevan C# koodin toimimaan.
+
+## 04.02.2024 20.00 - 21.10 ; 1 h 10 min
+- Made a fresh ConsoleApp working (DMX_Server in the main dir)

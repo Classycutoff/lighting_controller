@@ -1,0 +1,8 @@
+D:\Opinnot\2023_Oppari\lighting_controller\DMX_Server\DMX_Server\bin\Debug\DMX_Server.exe.config
+D:\Opinnot\2023_Oppari\lighting_controller\DMX_Server\DMX_Server\bin\Debug\DMX_Server.exe
+D:\Opinnot\2023_Oppari\lighting_controller\DMX_Server\DMX_Server\bin\Debug\DMX_Server.pdb
+D:\Opinnot\2023_Oppari\lighting_controller\DMX_Server\DMX_Server\obj\Debug\DMX_Server.csproj.AssemblyReference.cache
+D:\Opinnot\2023_Oppari\lighting_controller\DMX_Server\DMX_Server\obj\Debug\DMX_Server.csproj.SuggestedBindingRedirects.cache
+D:\Opinnot\2023_Oppari\lighting_controller\DMX_Server\DMX_Server\obj\Debug\DMX_Server.csproj.CoreCompileInputs.cache
+D:\Opinnot\2023_Oppari\lighting_controller\DMX_Server\DMX_Server\obj\Debug\DMX_Server.exe
+D:\Opinnot\2023_Oppari\lighting_controller\DMX_Server\DMX_Server\obj\Debug\DMX_Server.pdb
