@@ -91,3 +91,6 @@ git config --global alias.yolo '!sh -c "git commit -am \"`curl -sL https://whatt
 
 ## 04.02.2024 20.00 - 21.10 ; 1 h 10 min
 - Made a fresh ConsoleApp working (DMX_Server in the main dir)
+
+## 06.02.2024 17.40 - xx.xx ; x h xx min
+- Yritän  importata efektejä main.pyhyn 
