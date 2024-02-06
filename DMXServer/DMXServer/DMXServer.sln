@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.4.33213.308
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DMX_Server", "DMX_Server.csproj", "{CE11FA73-E616-4864-AE98-2F4815E557B9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DMXServer", "DMXServer.csproj", "{367AE4FC-7361-4275-926D-885BC2376B3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,15 +11,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{CE11FA73-E616-4864-AE98-2F4815E557B9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{CE11FA73-E616-4864-AE98-2F4815E557B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{CE11FA73-E616-4864-AE98-2F4815E557B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{CE11FA73-E616-4864-AE98-2F4815E557B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{367AE4FC-7361-4275-926D-885BC2376B3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{367AE4FC-7361-4275-926D-885BC2376B3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{367AE4FC-7361-4275-926D-885BC2376B3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{367AE4FC-7361-4275-926D-885BC2376B3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {4CFDE001-6837-4720-BDB6-DE8813A36AE8}
+		SolutionGuid = {B9EAFBBD-70A3-440C-BC9B-96A91154C83C}
 	EndGlobalSection
 EndGlobal

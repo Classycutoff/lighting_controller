@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{CE11FA73-E616-4864-AE98-2F4815E557B9}</ProjectGuid>
+    <ProjectGuid>{367AE4FC-7361-4275-926D-885BC2376B3A}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>DMX_Server</RootNamespace>
-    <AssemblyName>DMX_Server</AssemblyName>
+    <RootNamespace>DMXServer</RootNamespace>
+    <AssemblyName>DMXServer</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

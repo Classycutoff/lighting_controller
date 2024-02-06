@@ -1,18 +1,15 @@
 import win32pipe, win32file
+import json
 
 
-class DMXServerError(Exception):
-    pass
+def DMXServerError(Exception):
+    raise Exception
 
 
 class DMXClient:
-    """Interface to connect to a DMXServer controlling an Entec OPEN DMX USB
-
-    Arguments:
-        pipeName {string} -- Name of named pipe (DMXServer must use the same)
-    """
 
     def __init__(self, pipeName):
+        self.connected = False
         self.pipe = win32pipe.CreateNamedPipe(
             r"\\.\pipe\\" + pipeName,
             win32pipe.PIPE_ACCESS_OUTBOUND,
@@ -25,108 +22,31 @@ class DMXClient:
             0,
             None,
         )
-        self.connected = False
 
-    def connect(self, verbose=False):
-        """Connect to the DMXServer using a named pipe (blocks until connected)
+    def connect(self):
+        print("Waiting for connection to DMXServer...", end="", flush=True)
 
-        Keyword Arguments:
-            verbose {bool} -- Print verbose output to stdout (default: {False})
-        """
-        if verbose:
-            print("Waiting for connection to DMXServer...", end="", flush=True)
         win32pipe.ConnectNamedPipe(self.pipe, None)
         self.connected = True
-        if verbose:
-            print("\nConnected")
+        print("\nConnected.")
 
-    def close(self, verbose=False):
-        """Close connection to the DMXServer
-
-        Keyword Arguments:
-            verbose {bool} -- Print verbose output to stdout (default: {False})
-
-        Raises:
-            DMXServerError: Not connected to DMXServer
-        """
+    def close(self):
         if not self.connected:
-            raise DMXServerError("Not connected to DMXServer")
-        self.connected = False
-        if verbose:
-            print("Closing connection to DMXServer...", end="", flush=True)
+            print("Not connected.")
+            return False
+
         win32file.CloseHandle(self.pipe)
-        if verbose:
-            print("Disconnected")
+        self.connected = False
+        print("Connection closed.")
 
-    def write(self, message):
-        """Sends a DMXCommand to the DMXServer to control an Enttec OPEN DMX USB
-
-        Arguments:
-            message {string} -- ('DMX channel value...') DMXCommand to send with unlimited channel->value pairs
-            message {list} -- ([channel, value...]) DMXCommand to send with unlimited channel->value pairs
-            message {dictionary} -- ({channel: value...}) DMXCommand to send with unlimited channel->value pairs, pairs can be {int, string}
-
-        Raises:
-            DMXServerError: Not connected to DMXServer
-            ValueError: Malformed DMXCommand
-        """
-
-        # Check type of message to convert to string DMXCommand
-        messaget = type(message)
-        command = "DMX"
-        if messaget == list:
-            if len(message) % 2 != 0:
-                raise ValueError("Malformed DMX-List")
-            for i in message:
-                command += " " + str(i)
-        elif messaget == dict:
-            for key, value in message.items():
-                command += " " + str(key) + " " + str(value)
-        elif messaget == str:
-            command = message
-        else:
-            raise ValueError("DMXCommand has invalid data type")
-
+    def write_DMX(self, DMX_dict):
+        if type(DMX_dict) != dict:
+            raise ValueError("write_DMX only accepts dictionaries.")
         if not self.connected:
-            raise DMXServerError("Not connected to DMXServer")
-        self._write(command)
+            raise ValueError("Not connected to DMXServer")
 
-    def effect(self, message):
-        """Sends a DMXEffect to the DMXServer to control an Enttec OPEN DMX USB
+        PipeCommand = "DMX"
+        for key, value in DMX_dict.items():
+            PipeCommand += " " + str(key) + " " + str(value)
 
-        Arguments:
-            message {string} -- ('EFFECT name time channel value...') DMXEffect to send with unlimited time->channel->value pairs
-            message {list} -- ([name, time, channel, value...]) DMXEffect to send with unlimited time->channel->value pairs
-
-        Raises:
-            DMXServerError: Not connected to DMXServer
-            ValueError: Malformed DMXEffect
-        """
-
-        # Check type of message to convert to string DMXCommand
-        messaget = type(message)
-        command = "EFFECT"
-        if messaget == list:
-            command += " {0}".format(
-                message.pop(0)
-            )  # HACK: !This will be migrated to f-Strings in a future release
-            if len(message) % 3 != 0:
-                raise ValueError("Malformed Effect-List")
-            for i in message:
-                command += " " + str(i)
-        elif messaget == str:
-            command = message
-        else:
-            raise ValueError("DMXCommand has invalid data type")
-
-        if not self.connected:
-            raise DMXServerError("Not connected to DMXServer")
-        self._write(command)
-
-    def _write(self, message):
-        """Directly send Command to DMXServer without any checks
-
-        Arguments:
-            message {string} -- Command without trailing newline('\\n')
-        """
-        win32file.WriteFile(self.pipe, message.encode() + b"\n")
+        win32file.WriteFile(self.pipe, PipeCommand.encode() + b"\n")

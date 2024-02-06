@@ -7,6 +7,7 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Remoting.Channels;
+//using Newtonsoft.Json;
 
 namespace DMX_Server
 {
@@ -23,8 +24,8 @@ namespace DMX_Server
             // Open connection to the OpenDMX device.
             try
             {
-                OpenDMX.start();                                            
-                if (OpenDMX.status == FT_STATUS.FT_DEVICE_NOT_FOUND)      
+                OpenDMX.start();
+                if (OpenDMX.status == FT_STATUS.FT_DEVICE_NOT_FOUND)
                     Console.WriteLine("No Enttec USB Device Found");
                 else if (OpenDMX.status == FT_STATUS.FT_OK)
                     Console.WriteLine("Found an Enttec USB DMX Device.");
@@ -49,15 +50,25 @@ namespace DMX_Server
                 Console.WriteLine("Connected");
                 using (StreamReader sr = new StreamReader(pipeClient))
                 {
+                    //string raw_json;
                     string input;
 
                     do
                     {
                         //variables used for command handling
-                        input = sr.ReadLine(); //Holds the string recieved over the named pipe
+                        //raw_json = sr.ReadLine(); //Holds the string recieved over the named pipe
+                        input = sr.ReadLine();
+
+                        if (sr.ReadLine() == null)
+                        {
+                            break;
+                        }
+
+                        //var input = JsonConvert.DeserializeObject<raw_json>(raw_json);
+                        Console.WriteLine(input);
 
                         formatPipeOutput(input);
-                    } while (pipeClient.IsConnected & (input = sr.ReadLine()) != null);
+                    } while (pipeClient.IsConnected & ((input = sr.ReadLine()) != null));
 
                 }
             }
@@ -99,14 +110,14 @@ namespace DMX_Server
             }
         }
 
-            static void changeDMX(List<int> DMX_Channels, Dictionary<int, byte> DMX_Channel_Dict)
+        static void changeDMX(List<int> DMX_Channels, Dictionary<int, byte> DMX_Channel_Dict)
         {
             for (int i = 0; i < DMX_Channels.Count; i++)
             {
                 OpenDMX.setDmxValue(DMX_Channels[i], DMX_Channel_Dict[DMX_Channels[i]]);
                 OpenDMX.writeData();
             }
-            // Thread.Sleep(50);
+            Thread.Sleep(5);
         }
     }
 
