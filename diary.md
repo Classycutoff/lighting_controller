@@ -95,6 +95,6 @@ git config --global alias.yolo '!sh -c "git commit -am \"`curl -sL https://whatt
 ## 06.02.2024 17.40 - 19.10 ; 1 h 30 min
 - Yritän  importata efektejä main.pyhyn 
 
-## 13.02.2024 17.30 - 19.30 ; 2 h xx min
+## 13.02.2024 17.30 - 20.40 ; 3 h 10 min
 - En tiedä mitä yritän, tehdä erilaisia efektejä kai.
 - Sain tehtyä paljon. Sain kummatkin pipelinen puolet kokeilemaan uudestaan, jos connection rikkoontuu. Sen lisäksi sain tehtyä muutamia efektejä, esimerkiksi rotating one ja kaikki valot päälle. Jostain syystä minun tarvitsee laittaa kaksi kertaa dataa pipelineen jotta se lukee kaiken.
