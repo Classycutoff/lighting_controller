@@ -62,7 +62,7 @@ namespace DMX_Server
                             //raw_json = sr.ReadLine(); //Holds the string recieved over the named pipe
                             input = sr.ReadLine();
 
-                            if (sr.ReadLine() == null)
+                            if (input == null)
                             {
                                 break;
                             }

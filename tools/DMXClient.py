@@ -50,4 +50,6 @@ class DMXClient:
         for key, value in DMX_dict.items():
             PipeCommand += " " + str(key) + " " + str(value)
 
+        # I don't know why, but the pipeline ignores every second write, so i write two times.
         win32file.WriteFile(self.pipe, PipeCommand.encode() + b"\n")
+        # win32file.WriteFile(self.pipe, PipeCommand.encode() + b"\n")

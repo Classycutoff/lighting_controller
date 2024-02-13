@@ -6,3 +6,9 @@ def ef_rotate(dmx, mod_num):
 def ef_all_on(dmx=None, chan_range=255):
     dmx_dict = {i: 255 for i in range(1, chan_range + 1)}
     return dmx_dict
+
+
+def ef_forward_backward(dmx, range):
+    dmx_dict = {}
+    for key, value in dmx.items():
+        pass

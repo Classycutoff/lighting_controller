@@ -1,4 +1,5 @@
 import time
+
 from tools.DMXClient import DMXClient
 from effects.DMX_Effects import ef_all_on, ef_rotate
 
@@ -7,7 +8,7 @@ KEEP_CONNECTION_UP = True
 
 dmx_channel = 0
 counter = 0
-dmx_dict = {1: 255}
+dmx_dict = {0: 255}
 
 try:
     while True:
@@ -24,8 +25,7 @@ try:
                 print(dmx_dict)
 
                 dmxClient.write_DMX(dmx_dict)
-                dmxClient.write_DMX(dmx_dict)
-
+                time.sleep(2)
                 time.sleep(0.04)  # Added so that KeyBoardInterrupt has time to work.
         except Exception as e:
             print(e)
