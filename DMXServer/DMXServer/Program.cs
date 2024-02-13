@@ -42,34 +42,47 @@ namespace DMX_Server
 
             // Opening the Pipeline to the python code.
             // It connects based on the pipeName.
-            using (NamedPipeClientStream pipeClient =
-               new NamedPipeClientStream(".", pipeName, PipeDirection.In))
+            while (true)
             {
-                Console.WriteLine("Waiting for connection to DMXClient...");
-                pipeClient.Connect();
-                Console.WriteLine("Connected");
-                using (StreamReader sr = new StreamReader(pipeClient))
+                    using (NamedPipeClientStream pipeClient =
+                   new NamedPipeClientStream(".", pipeName, PipeDirection.In))
                 {
-                    //string raw_json;
-                    string input;
 
-                    do
+                    Console.WriteLine("Waiting for connection to DMXClient...");
+                    pipeClient.Connect();
+                    Console.WriteLine("Connected");
+                    using (StreamReader sr = new StreamReader(pipeClient))
                     {
-                        //variables used for command handling
-                        //raw_json = sr.ReadLine(); //Holds the string recieved over the named pipe
-                        input = sr.ReadLine();
+                        //string raw_json;
+                        string input;
 
-                        if (sr.ReadLine() == null)
+                        do
                         {
-                            break;
-                        }
+                            //variables used for command handling
+                            //raw_json = sr.ReadLine(); //Holds the string recieved over the named pipe
+                            input = sr.ReadLine();
 
-                        //var input = JsonConvert.DeserializeObject<raw_json>(raw_json);
-                        Console.WriteLine(input);
+                            if (sr.ReadLine() == null)
+                            {
+                                break;
+                            }
+                            //var input = JsonConvert.DeserializeObject<raw_json>(raw_json);
+                            Console.WriteLine(input);
 
-                        formatPipeOutput(input);
-                    } while (pipeClient.IsConnected & ((input = sr.ReadLine()) != null));
+                            formatPipeOutput(input);
+                        } while (pipeClient.IsConnected);
 
+                        Console.WriteLine("Pipeline Disconnected.");
+
+
+                    }
+                    
+                }
+
+                if (false)
+                {
+                    Console.WriteLine("This is the stopping point");
+                    break;
                 }
             }
 
@@ -115,8 +128,8 @@ namespace DMX_Server
             for (int i = 0; i < DMX_Channels.Count; i++)
             {
                 OpenDMX.setDmxValue(DMX_Channels[i], DMX_Channel_Dict[DMX_Channels[i]]);
-                OpenDMX.writeData();
             }
+            OpenDMX.writeData();
             Thread.Sleep(5);
         }
     }
@@ -199,7 +212,7 @@ namespace DMX_Server
                     status = FT_SetBreakOff(handle);
                     bytesWritten = write(handle, buffer, buffer.Length);
 
-                    Thread.Sleep(25);      //give the system time to send the data before sending more 
+                    Thread.Sleep(1);      //give the system time to send the data before sending more 
 
                     Array.Clear(buffer, 0, buffer.Length);      // Clear the buffer before writing more.
                 }

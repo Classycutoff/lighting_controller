@@ -36,6 +36,7 @@ class DMXClient:
             return False
 
         win32file.CloseHandle(self.pipe)
+        self.pipe.close()
         self.connected = False
         print("Connection closed.")
 

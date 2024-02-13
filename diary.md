@@ -94,3 +94,6 @@ git config --global alias.yolo '!sh -c "git commit -am \"`curl -sL https://whatt
 
 ## 06.02.2024 17.40 - 19.10 ; 1 h 30 min
 - Yritän  importata efektejä main.pyhyn 
+
+## 13.02.2024 17.30 - xx-xx ; x h xx min
+- En tiedä mitä yritän, tehdä erilaisia efektejä kai.
