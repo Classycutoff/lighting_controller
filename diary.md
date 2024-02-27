@@ -98,3 +98,7 @@ git config --global alias.yolo '!sh -c "git commit -am \"`curl -sL https://whatt
 ## 13.02.2024 17.30 - 20.40 ; 3 h 10 min
 - En tiedä mitä yritän, tehdä erilaisia efektejä kai.
 - Sain tehtyä paljon. Sain kummatkin pipelinen puolet kokeilemaan uudestaan, jos connection rikkoontuu. Sen lisäksi sain tehtyä muutamia efektejä, esimerkiksi rotating one ja kaikki valot päälle. Jostain syystä minun tarvitsee laittaa kaksi kertaa dataa pipelineen jotta se lukee kaiken.
+
+## 27.02.2024 17.30 - 20.00 ; 2 h 30 min
+- An effect made, rotate and RGB backward and forward
+- Started to analyse audio

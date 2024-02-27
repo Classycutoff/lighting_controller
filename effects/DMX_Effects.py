@@ -1,5 +1,16 @@
-def ef_rotate(dmx, mod_num):
-    result_dict = {(key % mod_num + 1): value for key, value in dmx.items()}
+def ef_rotate(dmx_dictx, mod_num, skip_light):
+    if skip_light < 0:
+        result_dict = {}
+        for dmx_chan, value in dmx_dictx.items():
+            if (dmx_chan + skip_light) <= 0:
+                result_dict[mod_num - (dmx_chan + skip_light) + 1] = value
+            else:
+                result_dict[dmx_chan + skip_light] = value
+    else:
+        result_dict = {
+            ((key + skip_light) % mod_num + 1): value
+            for key, value in dmx_dictx.items()
+        }
     return result_dict
 
 
@@ -27,38 +38,22 @@ def ef_forward_backward(dmx, dmx_range, chan_val=255):
     return result_dict
 
 
-# dmx is the dict with channel and value, dmx_range is what values do you want,
-# dmx_range the range of channels starting from 1,
-# chan_range is how many lights you want to put on at the same time.
-# and chan_val is the value of the channel.
-def ef_rgb_forward_backward(dmx, dmx_range, chan_range, chan_val=255):
-    if len(dmx) != chan_range * 2:
-        # Returns the starting values for this effect, which is the first and last channel.
-        result_dict = {}
-        for i in range(1, 1 + chan_range):
-            result_dict[i] = chan_val
-        for i in range(dmx_range, dmx_range - chan_range, -1):
-            result_dict[i] = chan_val
+def slow_wrapper(mod_num, count, func, dmx_dict, args):
+    count = count % mod_num
+    if count == 0:
+        return count, func(dmx_dict, *args)
 
-        return result_dict
+    count += 1
+    return count, dmx_dict
 
-    result_dict = {}
-    dmx_items = list(dmx.items())
-    forward_lst = dmx_items[0:chan_range]
-    for dmx_chan, dmx_val in forward_lst:
-        result_dict[dmx_chan % dmx_range + 1] = dmx_val
 
-    backward_lst = dmx_items[-1 * chan_range :]
-    print(backward_lst)
+def ef_rgb_slow_forward_backward(beginning_dict, end_dict, counter, mod_num):
+    bcount, beginning_dict = slow_wrapper(
+        5, counter, ef_rotate, beginning_dict, [mod_num, 3]
+    )
+    ecount, end_dict = slow_wrapper(10, counter, ef_rotate, end_dict, [mod_num, -3])
 
-    # forward_chan, forward_val = dmx_items[0]
-    # backward_chan, backward_val = dmx_items[1]
+    if not beginning_dict and not end_dict:
+        raise ValueError
 
-    # forward_chan = forward_chan % dmx_range + 1
-    # backward_chan -= 1
-    # if backward_chan <= 0:
-    #     backward_chan = dmx_range
-
-    # result_dict = {forward_chan: forward_val, backward_chan: backward_val}
-
-    return dmx
+    return bcount, beginning_dict, end_dict

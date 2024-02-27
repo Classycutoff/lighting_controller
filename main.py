@@ -9,11 +9,13 @@ KEEP_CONNECTION_UP = True
 
 dmx_channel = 0
 counter = 0
-dmx_dict = {0: 255}
+dmx_dict = {0: 255, 1: 255, 2: 255}
 test = {}
 
 try:
     while True:
+        beginning_dict = dmx_dict
+        end_dict = dmx_dict
         try:
             dmxClient.connect()
             while True:
@@ -22,13 +24,18 @@ try:
                 # )  # DMX is counted from 1 upwards, and that's why it is + 1.
 
                 # dmx_dict = ef_all_on()
-                # dmx_dict = ef_rotate(dmx_dict, 24)
-                dmx_dict = ef_forward_backward(dmx_dict, 24)
-                test = ef_rgb_forward_backward(test, 24, 3)
-                print(test)
-                # print(dmx_dict)
 
-                dmxClient.write_DMX(dmx_dict)
+                counter, beginning_dict, end_dict = ef_rgb_slow_forward_backward(
+                    beginning_dict, end_dict, counter, 24
+                )
+                # dmx_dict = ef_forward_backward(dmx_dict, 24)
+                # test = ef_rgb_forward_backward(test, 24, 3)
+                # print("test", test)
+                # print(dmx_dict)
+                result = beginning_dict | end_dict
+                print(result)
+
+                dmxClient.write_DMX(result)
 
                 time.sleep(0.04)  # Added so that KeyBoardInterrupt has time to work.
         except Exception as e:
