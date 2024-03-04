@@ -102,3 +102,7 @@ git config --global alias.yolo '!sh -c "git commit -am \"`curl -sL https://whatt
 ## 27.02.2024 17.30 - 20.00 ; 2 h 30 min
 - An effect made, rotate and RGB backward and forward
 - Started to analyse audio
+
+## 04.03.2024 21.15 - 23.45 ; 2 h 30 min
+- Audio analysis
+- Made it possible to analyze audio, to stream audio, to analyze it in blocks, and managed to do the supposed effect I want to do in matplotlib window.
