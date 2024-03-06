@@ -106,3 +106,6 @@ git config --global alias.yolo '!sh -c "git commit -am \"`curl -sL https://whatt
 ## 04.03.2024 21.15 - 23.45 ; 2 h 30 min
 - Audio analysis
 - Made it possible to analyze audio, to stream audio, to analyze it in blocks, and managed to do the supposed effect I want to do in matplotlib window.
+
+## 06.03.2024 19.20 - 22.00 ; 2 h 40 min
+- Made audio analysis tools and functions, and made the first try on the visual equalizer.
