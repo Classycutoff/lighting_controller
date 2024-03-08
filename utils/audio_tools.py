@@ -11,7 +11,7 @@ def find_device_index() -> int:
     device_list = sd.query_devices()
     for device in device_list:
         if "VoiceMeeter Output (VB-Audio Vo" == device["name"]:  # type: ignore
-            return device["index"]  # type: ignore
+            return int(device["index"])  # type: ignore
     else:
         print("Define Audio didnt find voicemeeter output")
         raise ValueError
@@ -21,7 +21,7 @@ def divide_frequency_range_into_chunks(start_freq, end_freq, num_chunks):
     frequencies = np.logspace(
         np.log10(start_freq), np.log10(end_freq), num=num_chunks, base=10, endpoint=True
     )
-    frequency_chunks = [frequencies[i] for i in range(num_chunks)]
+    frequency_chunks = [round(frequencies[i]) for i in range(num_chunks)]
     return frequency_chunks
 
 
@@ -41,8 +41,9 @@ def divide_frequency_spectrum_into_logarithmic_chunks(
 def calculate_loudness(data):
     spectrum = np.fft.fft(data)
     magnitude = np.abs(spectrum)
+    magnitude_in_db = 20 * np.log10(magnitude)
 
-    return magnitude
+    return magnitude_in_db
 
 
 def calculate_loudness_of_freq_chunk(freq_chunks):

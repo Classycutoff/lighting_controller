@@ -50,7 +50,7 @@ def main():
                     )  # Added so that KeyBoardInterrupt has time to work.
                     stream, divided_freq_chunks = audio_stream_var
             except Exception as e:
-                print(e)
+                print(repr(e))
                 dmxClient.close()
                 if not KEEP_CONNECTION_UP:
                     break
