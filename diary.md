@@ -110,5 +110,6 @@ git config --global alias.yolo '!sh -c "git commit -am \"`curl -sL https://whatt
 ## 06.03.2024 19.20 - 22.00 ; 2 h 40 min
 - Made audio analysis tools and functions, and made the first try on the visual equalizer.
 
-## 08.03.2024 18.00 - xx.xx ; x h xx min
+## 08.03.2024 18.00 - 22:30 ; 2 h 30 min
 - Made the loudness db based, made a range of db values that affect it, and made some tweaks all around.
+- A "finished" visual equalizer, next project is the GUI

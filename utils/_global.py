@@ -21,3 +21,5 @@ COLORS_TO_BINS = {
     4: {"R": 0, "G": 255, "B": 255},  # Yellow
     5: {"R": 255, "G": 255, "B": 255},  # white
 }
+
+slow_dimming_chan = {}

@@ -2,24 +2,25 @@ import time
 
 from utils.DMXClient import DMXClient
 from utils.audio_tools import get_audio_stream
+from utils.tkinter_func import def_tkinter
 from effects.DMX_Effects import ef_all_on, ef_rotate, ef_forward_backward
 from effects.DMX_Effects import *
-
 
 dmx_channel = 0
 counter = 0
 dmx_dict = {0: 255, 1: 255, 2: 255}
 test = {}
+beginning_dict = dmx_dict
+end_dict = dmx_dict
 
 
 def main():
     stream, divided_freq_chunks = (False, False)
     dmxClient = DMXClient("DMX_Pipe")
+    # def_tkinter()
     KEEP_CONNECTION_UP = True
     try:
         while True:
-            beginning_dict = dmx_dict
-            end_dict = dmx_dict
             try:
                 dmxClient.connect()
                 while True:

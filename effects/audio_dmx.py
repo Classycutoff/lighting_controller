@@ -29,6 +29,19 @@ def normalize_decibels(data):
     return normalized
 
 
+# Slow_dimming makes the variable slowly descent if there isn't any new and bigger values
+def slow_dimming(chan, value):
+    chan_val = _global.slow_dimming_chan
+
+    # Checks if the channel is actually in the dict, and if the value inside the dict is bigger than the incomin value
+    if chan in chan_val and chan_val[chan] > value:
+        _global.slow_dimming_chan[chan] = max(0, _global.slow_dimming_chan[chan] - 5)
+    else:
+        _global.slow_dimming_chan[chan] = value
+
+    return _global.slow_dimming_chan[chan]
+
+
 def var_to_rgb_channels(dmx_values):
     color_bins = _global.COLOR_BINS
     colors_to_bins = _global.COLORS_TO_BINS
@@ -43,8 +56,9 @@ def var_to_rgb_channels(dmx_values):
         channel = one_chan * 3
         for i in range(channel, channel + 4):
             col_lst_index = i % 3
-            result_values[i + 1] = min(
-                int(color[colors_list_order[col_lst_index]] * brightness), 255
+            result_values[i + 1] = slow_dimming(
+                i + 1,
+                min(int(color[colors_list_order[col_lst_index]] * brightness), 255),
             )
     return result_values
 
