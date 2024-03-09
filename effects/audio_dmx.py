@@ -48,9 +48,12 @@ def var_to_rgb_channels(dmx_values):
     result_values = {}
     for one_chan, value in dmx_values.items():
         bin_index = np.digitize(value, color_bins) - 1
-        brightness = (value - color_bins[bin_index]) / (
-            color_bins[bin_index + 1] - color_bins[bin_index]
-        )
+        if color_bins[bin_index] == 255:
+            brightness = 55
+        else:
+            brightness = (value - color_bins[bin_index]) / (
+                color_bins[bin_index + 1] - color_bins[bin_index]
+            )
         color = colors_to_bins.get(bin_index, {"R": 0, "G": 0, "B": 0})
         colors_list_order = list(color.keys())
         channel = one_chan * 3

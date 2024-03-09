@@ -113,3 +113,6 @@ git config --global alias.yolo '!sh -c "git commit -am \"`curl -sL https://whatt
 ## 08.03.2024 18.00 - 22:30 ; 2 h 30 min
 - Made the loudness db based, made a range of db values that affect it, and made some tweaks all around.
 - A "finished" visual equalizer, next project is the GUI
+
+## 09.03.2024 12.30 - 16:30 ; 4 h 00 min
+- Tkinter app finished.
